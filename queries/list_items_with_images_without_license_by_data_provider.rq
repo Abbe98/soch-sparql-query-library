@@ -1,0 +1,8 @@
+#title: Get Items with Images from Uppsala Museum without License
+#tags: license
+
+SELECT DISTINCT ?item WHERE {
+  ?item <http://kulturarvsdata.se/ksamsok#serviceOrganization> "upmu" .
+  ?item <http://kulturarvsdata.se/ksamsok#image> ?image .
+  FILTER NOT EXISTS { ?image <http://kulturarvsdata.se/ksamsok#mediaLicenseUrl> ?license }
+}

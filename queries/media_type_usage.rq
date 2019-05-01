@@ -1,0 +1,8 @@
+#title: Summarize usage of Media Types
+#tags: mediatype
+
+SELECT ?mediaType (COUNT(?mediaType) AS ?count) WHERE {
+  ?item <http://kulturarvsdata.se/ksamsok#mediaType> ?mediaType .
+}
+GROUP BY ?mediaType
+ORDER BY DESC(?count)

@@ -1,0 +1,9 @@
+#title: Get all SOCH Classes
+#tags: meta
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT * WHERE {
+  ?class a owl:Class .
+  FILTER(STRSTARTS(STR(?class), 'http://kulturarvsdata.se/ksamsok#'))
+}

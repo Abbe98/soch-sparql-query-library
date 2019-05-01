@@ -1,0 +1,7 @@
+#title: Media License Usage
+#tags: license
+
+SELECT ?license (COUNT(?license) AS ?count) WHERE {
+  ?item <http://kulturarvsdata.se/ksamsok#mediaLicenseUrl> ?license
+}
+GROUP BY ?license
