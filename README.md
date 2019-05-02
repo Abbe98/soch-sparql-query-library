@@ -1,6 +1,6 @@
 # SOCH SPARQL Query Library
 
-This repository contains a collection of SPARQL queries made for Swedish Open Cultural Heritage/K-samsök. It comes with an basic API built for te SPARQL editor [Thor](https://github.com/Abbe98/thor).
+This repository contains a collection of SPARQL queries made for Swedish Open Cultural Heritage/K-samsök. It comes with an basic API built for the SPARQL editor [Thor](https://github.com/Abbe98/thor).
 
 ## Adding your own query
 
