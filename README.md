@@ -19,3 +19,11 @@ SELECT ?refs WHERE {
   ?description_node soch:desc ?refs .
 }
 ```
+
+## Generating JSON
+
+You can generate the API/JSON file by running the following from root.
+
+```bash
+python generate_json.py
+```
