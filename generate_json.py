@@ -10,7 +10,7 @@ for filename in os.listdir('queries'):
         body = body.replace('\n', '', 1)
 
         query = {}
-        query['tilte'] = title
+        query['title'] = title
         query['tags'] = tags
         query['body'] = body
         
