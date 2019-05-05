@@ -1,0 +1,8 @@
+#title: Get items described by the Swedish Wikipedia article about The battle of Poltava
+#tags: wikipedia,events
+
+PREFIX soch: <http://kulturarvsdata.se/ksamsok#>
+
+SELECT ?item WHERE {
+  ?item soch:isDescribedBy <http://sv.wikipedia.org/wiki/Slaget_vid_Poltava>
+}
