@@ -1,0 +1,11 @@
+#title: Items with more than 20 keywords
+#tags: meta,keywords
+
+PREFIX soch: <http://kulturarvsdata.se/ksamsok#>
+
+SELECT ?item (COUNT(?keyword) AS ?c) WHERE {
+  ?item soch:itemKeyWord ?keyword
+}
+
+GROUP BY ?item
+HAVING(?c > 20)
