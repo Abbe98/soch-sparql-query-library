@@ -1,0 +1,9 @@
+#title: Find items without itemLabel
+#tags: data quality,meta
+
+PREFIX soch: <http://kulturarvsdata.se/ksamsok#>
+
+SELECT ?item WHERE {
+  ?item a soch:Entity .
+  FILTER NOT EXISTS{ ?item soch:itemLabel ?label . }
+}
