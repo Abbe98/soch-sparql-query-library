@@ -1,0 +1,8 @@
+#title: Was Charles XII of Sweden present at the Capture of Daugavgrīva
+#tags: ask,events
+
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+
+ASK {
+  <http://kulturarvsdata.se/LSH/agents/16906> crm:P12B.was_present_at <http//:kulturarvsdata.se/LSH/events/3488>
+}
