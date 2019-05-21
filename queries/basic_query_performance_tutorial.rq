@@ -1,0 +1,19 @@
+#title: Basic Query Performance Tutorial
+#tags: meta,tutorial
+
+PREFIX soch: <http://kulturarvsdata.se/ksamsok#>
+PREFIX text: <http://jena.apache.org/text#>
+
+SELECT ?item ?label WHERE {
+  # If you are querying entities allways limit your query to tripples of the entity type
+  # this way you avoid running your queries over other SOCH classes such as Context and ItemDescription
+  ?item a soch:Entity .
+  
+  # If you can limit your result even more before preforming a text or spatial search do so
+  ?item soch:itemType <http://kulturarvsdata.se/resurser/EntityType#object>;
+  
+    # Now let's not use SPARQL's built in REGEX() function to make free text searches
+    # instead we can use a text search property function which runs on a prebuilt text index
+    text:query (soch:itemLabel 'Fisk') ;
+      soch:itemLabel ?label
+}
