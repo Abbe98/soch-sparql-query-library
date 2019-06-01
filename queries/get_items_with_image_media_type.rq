@@ -1,8 +1,10 @@
 #title: Get Items with an Image Media Type
 #tags: mediatype
 
+PREFIX soch: <http://kulturarvsdata.se/ksamsok#>
+
 SELECT ?item WHERE {
-  ?item <http://kulturarvsdata.se/ksamsok#image> ?image .
-  ?image <http://kulturarvsdata.se/ksamsok#mediaType> ?mediaType . 
+  ?item soch:image ?image .
+  ?image soch:mediaType ?mediaType . 
   FILTER REGEX(STR(?mediaType), "image")
 }

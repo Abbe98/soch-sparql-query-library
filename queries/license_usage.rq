@@ -1,7 +1,9 @@
 #title: Media License Usage
 #tags: license
 
+PREFIX soch: <http://kulturarvsdata.se/ksamsok#>
+
 SELECT ?license (COUNT(?license) AS ?count) WHERE {
-  ?item <http://kulturarvsdata.se/ksamsok#mediaLicenseUrl> ?license
+  ?item soch:mediaLicenseUrl ?license
 }
 GROUP BY ?license

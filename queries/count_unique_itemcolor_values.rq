@@ -1,8 +1,10 @@
 #title: Count unique itemColor values
 #tags: color
 
+PREFIX soch: <http://kulturarvsdata.se/ksamsok#>
+
 SELECT ?color (COUNT(?color) AS ?count) WHERE {
-  ?item <http://kulturarvsdata.se/ksamsok#itemColor> ?color .
+  ?item soch:itemColor ?color .
 }
 GROUP BY ?color
 ORDER BY DESC(?count)
