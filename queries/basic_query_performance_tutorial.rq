@@ -5,7 +5,7 @@ PREFIX soch: <http://kulturarvsdata.se/ksamsok#>
 PREFIX text: <http://jena.apache.org/text#>
 
 SELECT ?item ?label WHERE {
-  # If you are querying entities allways limit your query to tripples of the entity type
+  # If you are querying entities always limit your query to triples of the entity type
   # this way you avoid running your queries over other SOCH classes such as Context and ItemDescription
   ?item a soch:Entity .
   
