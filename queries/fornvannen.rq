@@ -1,0 +1,20 @@
+#title: Get all Fornvännen articles
+#tags: fornvannen,literature
+
+PREFIX soch: <http://kulturarvsdata.se/ksamsok#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?item ?label ?created ?author ?pdf (GROUP_CONCAT(?keyword; separator=",") as ?keywords) WHERE {
+  ?item soch:collection "Fornvännen" .
+  ?item soch:itemLabel ?label .
+  ?item soch:context ?context .
+  ?context soch:fromTime ?created .
+  ?context foaf:name ?author .
+  ?item soch:itemKeyWord ?keyword .
+  # hack to get full text pdfs from Samla items
+  ?item soch:thumbnail ?thumb .
+  BIND(REPLACE(STR(?thumb), '.jpg', '') AS ?pdf)
+}
+
+GROUP BY ?item ?label ?created ?author ?pdf
+ORDER BY DESC(?created)
